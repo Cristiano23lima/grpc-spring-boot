@@ -1,0 +1,21 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package demo.interfaces.grpc;
+
+message VendaRequest{
+    string nomeProduto = 1;
+    double precoProduto = 2;
+    int32 quantidadeProduto = 3;
+    string nomeCliente = 4;
+}
+
+message VendaResponse{
+    string nomeProduto = 1;
+    double precoProduto = 2;
+    int32 quantidadeProduto = 3;
+    string nomeCliente = 4;
+}
+
+service VendaService{
+    rpc myHello(VendaRequest) returns (VendaResponse);
+}
